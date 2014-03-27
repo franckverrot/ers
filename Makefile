@@ -1,4 +1,4 @@
-test: clean lib
+test: clean lib ers
 	rustc --test test/template_test.rs -o build/template_test -L lib
 	rustc --test test/parser_test.rs -o build/parser_test -L lib
 	rustc --test test/scanner_test.rs -o build/scanner_test -L lib
@@ -23,3 +23,10 @@ lib/$(LIBNAME): src/ers/lib.rs
 clean:
 	rm -f build/*
 	rm -f lib/*
+	rm -f bin/ers
+
+license:
+	`open http://www.gnu.org/licenses/gpl.txt`
+
+ers:
+	rustc bin/ers.rs -L lib

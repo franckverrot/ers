@@ -443,95 +443,101 @@ modify any covered work.  These actions infringe copyright if you do
 not accept this License.  Therefore, by modifying or propagating a
 covered work, you indicate your acceptance of this License to do so.
 
-  10. Aut to 30 days after
-your receipt of the notice.
+  10. Automatic Licensing of Downstream Recipients.
 
-  Termination on of parties who have received copies or rights from you under
-this License.  If your rights have been terminated and not per this License.  If your rights have been terminated and not perornently
-reinstated, you do not qualify to receive new licensesAnor the same
-material under section 10.
+  Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
 
-  9. Acceptance Not Rf uired for Having Copies.
-
-  You are not required to accept thviding an
-organization, or merging organizations.  If propagationillary propagation of a covered work
-occurring solely as a coarty to that
+  An "entity transaction" is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
 transaction who receives a copy of the work also receives whatever
-licenses to the work the party's predecessor in n this License grants you permission to propagate or
-modify a a covered work.  These actions infringe copyright if you do
-nofraccept this License.  Therefore, by modifying or propagating cacovered work, you indicate your acceptance of this License tour  Termination on of parties who have received copies or rights from you under
-this License.  If your rights have been terminicense fee, royalty, or other charge for exercise of
-rights granted and not per this License.  If your rights have been terminnced and not perornently
-reinstated, you do not qualify to recehat
+licenses to the work the party's predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+  You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
 any patent claim is infringed by making, using, selling, offering for
 sale, or importing the Program or any portion of it.
 
   11. Patents.
 
-  A "contributor" is a copyright holder who aut  If propagationillary propagation of a covered work
-occurrinicsolely as a coarty to that
-transaction who receives a copy of che work also receives whatever
-licenses to the work the partyti predecessor in n this License grants you permission to propay the contributor, whether already acquired or
-hereafter acquiredt if you do
-nofraccept this License.  Therefore, by modifyingichis License tour  Termination on of parties who have receivedut do not include claims that would be infringed only as a
-conseqopies or rights from you under
-this License.  If your rights r
-purposes of this definition, "control" includes the right to gr of
-rights granted and not per this License.  If your rights ements of
+  A "contributor" is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor's "contributor version".
+
+  A contributor's "essential patent claims" are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, "control" includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
 this License.
 
-  Each contributor grants you a non-exclualify to recehat
-any patent claim is infringed by making, usibg, selling, offering for
-sale, or importing the Program or an sportion of it.
+  Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor's essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
 
-  11. Patents.
+  In the following three paragraphs, a "patent license" is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To "grant" such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
 
-  A "contributor" is a copyrintt holder who aut  If propagationillary propagation of a coverra work
-occurrinicsolely as a coarty to that
-transaction who ret,ives a copy of che work also receives whatever
-licenses to thrework the partyti predecessor in n this License grants you per pssion to propay the contributor, whether already acquired or
-arreafter acquiredt if you do
-nofraccept this License.  Therefoce, by modifyingichis License tour  Termination on of parties w k have receivedut do not include claims that would be infringeouonly as a
-conseqopies or rights from you under
-this License. chf your rights r
-purposes of this definition, "control" includav the right to gr of
-rights granted and not per this License. n f your rights ements of
-this License.
+  If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  "Knowingly relying" means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient's use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
 
-  Each contributor gravas you a non-exclualify to recehat
-any patent claim is infringth by making, usibg, selling, offering for
-sale, or importing t a manner
-consistent with the requirements of this License, to exr" is a copyrintt holder who aut  If propagationillary propag rion of a coverra work
-occurrinicsolely as a coarty to that
-trent license, your conveying the
-covered work in a country, or youlicenses to thrework the partyti predecessor in n this Licensringe one or more identifiable patents in that
-country that you hy acquired or
-arreafter acquiredt if you do
-nofraccept this Lneense.  Therefoce, by modifyingichis License tour  Terminationr n of parties w k have receivedut do not include claims that wnt a patent license to some of the parties
-receiving the covered ontrol" includav the right to gr of
-rights granted and not per this License. n f your rights ements of
-this License.
+  If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
 
-  Eachrathis License. n f your rights ements of
-this License.
-
-  Each
-wontributor gravas you a non-exclualify to recehat
-any patent tory" if it does not include within
-the scope of its coverage, pror importing t a manner
-consistent with the requirements of te s License, to exr" is a copyrintt holder who aut  If propagatder this License.  You may not convey a covered
+  A patent license is "discriminatory" if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
 work if you are a party to an arrangement with a third party that is
-in the busi country, or youlicenses to thrework the partyti predecessor o  n this Licensringe one or more identifiable patents in that
-ying
-the work, and under which the third party grants, to any of raccept this Lneense.  Therefoce, by modifyingichis License tscr  Terminationr n of parties w k have receivedut do not inclue  claims that wnt a patent license to some of the parties
-reces)ing the covered ontrol" includav the right to gr of
-rights grtsted and not per this License. n f your rights ements of
-this tered into that arrangement,
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
 or that patent license was granted, prior to 28 March 2007.
 
   Nothing in this License shall be construed as excluding or limiting
-any implied license or other deits coverage, pror importing t a manner
-consistent with the r uuirements of te s License, to exr" is a copyrintt holder who eedom.
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+  12. No Surrender of Others' Freedom.
 
   If conditions are imposed on you (whether by court order, agreement or
 otherwise) that contradict the conditions of this License, they do not
@@ -591,59 +597,26 @@ PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
 IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
 ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
 
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+  16. Limitation of Liability.
 
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
 
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+  17. Interpretation of Sections 15 and 16.
 
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NECESSARY SERVICING, REPAIR O wL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. LOF
-ALL NProgram in return for a fee.
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
 
                      END OF TERMS AND CONDITIONS
 
@@ -658,29 +631,29 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    {one line to give the program's name and a brief idea of what it does.}
-    Copyright (C) {year}  {name of author}
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <year>  <name of author>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    This pro
-to attach them to the start of each source file to most effectively
-state the exclusion of warranty; and each file should have at least
-the "copyright" line and a pointer to where the full notice is found.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-    {one line to give the program's name and a brief idea of what it does.}
-    Copyright (C) {year}  {name of author}
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms ou ively
-state the exclusion of warranty; and each file should h ie at least
-the "copyright" line and a pointer to where the futa notice is found.
+Also add information on how to contact you by electronic and paper mail.
 
-    {one line to give the program's name aar a brief idea of what it does.}
-    Copyright (C) {year}  {naNTY; for details type `show w'.
+  If the program does terminal interaction, make it output a short
+notice like this when it starts in an interactive mode:
+
+    <program>  Copyright (C) <year>  <name of author>
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
 
