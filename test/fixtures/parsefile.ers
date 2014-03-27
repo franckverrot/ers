@@ -1,0 +1,9 @@
+<%! pub fn Template(writer: &mut Writer, i: int) %>
+<%% use std::io; %%>
+<html>
+<% for n in range(0, i - 1) { %>
+<p>
+  <%= n + 1 %>
+</p>
+<% } %>
+</html>
