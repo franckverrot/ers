@@ -9,13 +9,13 @@ The library infrastructure is largely inspired by `ego`.
 
 # INSTALLATION
 
-Using the Makefile should be enough to build the main transpiler :
+Using the Makefile should be enough to build the main transpiler:
 
     make ers
 
 # USAGE
 
-In order to compile a template `foo.ers` like :
+In order to compile a template `foo.ers` like:
 
 ```rust
 <%! pub fn Template(writer: &mut Writer, i: int) %>
@@ -29,11 +29,11 @@ In order to compile a template `foo.ers` like :
 </html>
 ```
 
-into a pure Rust function, run :
+into a pure Rust function, run:
 
     bin/ers foo.ers foo.rs
 
-Now that the template function is done, use the `Template` function in your code, say `my-file.rs`, like this :
+Now that the template function is done, use the `Template` function in your code, say `my-file.rs`, like this:
 
 ```rust
 extern mod foo;
