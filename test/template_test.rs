@@ -1,6 +1,6 @@
-extern mod ers;
+extern crate ers;
 
-use std::io::buffered::BufferedWriter;
+use std::io::BufferedWriter;
 use std::io::fs::File;
 use ers::{Template,Text,Header,Declaration,Code,Print,Pos,Block};
 

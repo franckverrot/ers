@@ -1,13 +1,13 @@
-extern mod ers;
+extern crate ers;
 
-use std::io::buffered::BufferedReader;
+use std::io::BufferedReader;
 use std::io::fs::File;
 use std::str::eq;
 use ers::{Scanner};
 
 fn fail_with_file(path : ~str) {
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
 
   let mut s = Scanner::new(peekable, path.clone());
@@ -22,7 +22,7 @@ fn fail_with_file(path : ~str) {
 fn test_scanner_scan_text_block() {
   let path = ~"test/fixtures/scan_text_block.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s = Scanner::new(peekable, path.clone());
   let b = s.scan().unwrap();
@@ -35,7 +35,7 @@ fn test_scanner_scan_text_block() {
 fn test_scanner_scan_text_block_single_lt() {
   let path = ~"test/fixtures/single_lt.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s = Scanner::new(peekable, path.clone());
   let b = s.scan().unwrap();
@@ -47,7 +47,7 @@ fn test_scanner_scan_text_block_single_lt() {
 fn test_scanner_scan_text_block_starting_lt() {
   let path = ~"test/fixtures/starting_lt.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s    = Scanner::new(peekable, path.clone());
   let b = s.scan().unwrap();
@@ -59,7 +59,7 @@ fn test_scanner_scan_text_block_starting_lt() {
 fn test_scanner_scan_code_block() {
   let path = ~"test/fixtures/code_block.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s    = Scanner::new(peekable, path.clone());
   let b = s.scan().unwrap();
@@ -91,7 +91,7 @@ fn test_scanner_scan_code_block_unexpected_eof_4() {
 fn test_scanner_scan_header_block() {
   let path = ~"test/fixtures/header_block.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s = Scanner::new(peekable, path.clone());
   let b = s.scan().unwrap();
@@ -128,7 +128,7 @@ fn test_scanner_scan_header_block_unexpected_eof_5() {
 fn test_scanner_scan_print_block() {
   let path = ~"test/fixtures/print_block.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s = Scanner::new(peekable, path.clone());
   let b = s.scan().unwrap();
@@ -151,7 +151,7 @@ fn test_scanner_scan_eof() {
 fn test_scanner_scan_multiline() {
   let path = ~"test/fixtures/multiline.ers";
   let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-  let input    = buf.read_to_str();
+  let input    = buf.read_to_str().unwrap();
   let peekable = input.chars();
   let mut s = Scanner::new(peekable, path.clone());
 

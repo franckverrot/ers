@@ -1,7 +1,7 @@
-extern mod ers;
+extern crate ers;
 
 use std::os;
-use std::io::buffered::BufferedWriter;
+use std::io::BufferedWriter;
 use std::io::fs::File;
 use ers::{Parser};
 

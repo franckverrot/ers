@@ -1,10 +1,10 @@
-#[crate_id = "github.com/franckverrot/ers"];
-#[desc = "ers - ERb-like templating for Rust"];
-#[license = "GPLv3"];
-#[crate_type = "lib"];
+#![crate_id = "github.com/franckverrot/ers"]
+#![desc = "ers - ERb-like templating for Rust"]
+#![license = "GPLv3"]
+#![crate_type = "lib"]
 use std::str::from_char;
 use std::iter::Peekable;
-use std::io::buffered::BufferedReader;
+use std::io::BufferedReader;
 use std::io::fs::File;
 
 #[deriving(Eq)]
@@ -35,7 +35,7 @@ pub struct Pos {
 
 impl Pos {
   pub fn write(&self, writer:&mut Writer) {
-    writer.write_line(format!("\n//line {:d}", self.line_no))
+    writer.write_line(format!("\n//line {:d}", self.line_no));
   }
 }
 
@@ -95,7 +95,7 @@ impl Block {
     self.pos.write(&mut w);
     match self.class {
       Header      => {
-        w.write_line(self.content)
+        w.write_line(self.content);
       },
       Declaration => {
         w.write_str(self.content);
@@ -105,8 +105,7 @@ impl Block {
         w.write_str(format!(
             "writer.write_line(\"{:s}\");\n",
             self.content
-            )
-                   )
+            ));
       },
       Print => {
         w.write_str("writer.write_line(format!(\"{:?}\", ");
@@ -114,7 +113,7 @@ impl Block {
         w.write_str("));\n");
       },
       _ => {
-        w.write_line(self.content)
+        w.write_line(self.content);
       }
     }
   }
@@ -133,7 +132,7 @@ impl Parser {
     let mut blocks : ~[~Block] = ~[];
 
     let mut buf  = ~BufferedReader::new(File::open(&Path::new(path.clone()))) as ~Buffer;
-    let input    = buf.read_to_str();
+    let input    = buf.read_to_str().unwrap();
     let peekable = input.chars();
 
     let mut scanner = Scanner::new(peekable, path.clone());

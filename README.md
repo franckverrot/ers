@@ -36,9 +36,9 @@ into a pure Rust function, run:
 Now that the template function is done, use the `Template` function in your code, say `my-file.rs`, like this:
 
 ```rust
-extern mod foo;
+extern crate foo;
 use std::io::stdio::stdout;
-use std::io::buffered::BufferedWriter;
+use std::io::BufferedWriter;
 use foo::Template;
 
 fn main() {

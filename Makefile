@@ -5,7 +5,7 @@ test: clean lib ers
 	./build/template_test
 	./build/parser_test
 	./build/scanner_test
-	rustc --lib build/foo.rs && rustc --test test/integration/launcher.rs -L build -o build/it_tests
+	rustc --crate-type lib build/foo.rs --out-dir build && rustc --test test/integration/launcher.rs -L build -o build/it_tests
 	./build/it_tests
 
 .PHONY: clean lib all test
@@ -17,8 +17,8 @@ all: lib test
 lib: lib/$(LIBNAME)
 
 lib/$(LIBNAME): src/ers/lib.rs
-	@mkdir -p lib
-	rustc -O --lib --out-dir lib $<
+	@mkdir -p lib build
+	rustc -O --crate-type lib --out-dir lib $<
 
 clean:
 	rm -f build/*

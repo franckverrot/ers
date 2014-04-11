@@ -1,6 +1,6 @@
-extern mod foo;
+extern crate foo;
 use std::io::stdio::stdout;
-use std::io::buffered::BufferedWriter;
+use std::io::BufferedWriter;
 use foo::Template;
 
 #[test]

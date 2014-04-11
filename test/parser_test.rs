@@ -1,4 +1,4 @@
-extern mod ers;
+extern crate ers;
 
 use ers::Parser;
 use ers::{Text,Header,Declaration,Code,Print,Pos,Block};
