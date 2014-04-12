@@ -39,7 +39,10 @@ impl Pos {
   }
 }
 
-enum TemplateWriteError {
+/**
+TemplateWriteError
+**/
+pub enum TemplateWriteError {
   DeclarationNotFound
 }
 
