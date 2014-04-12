@@ -19,6 +19,7 @@
 #![license = "GPLv3"]
 #![crate_type = "rlib"]
 #![crate_type = "dylib"]
+#![deny(missing_doc)]
 use std::str::from_char;
 use std::iter::Peekable;
 use std::io::BufferedReader;
