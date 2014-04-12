@@ -1,3 +1,5 @@
+.PHONY: clean lib all test
+
 test: clean lib ers
 	rustc --test test/template_test.rs -o build/template_test -L lib
 	rustc --test test/parser_test.rs -o build/parser_test -L lib
@@ -7,8 +9,7 @@ test: clean lib ers
 	./build/scanner_test
 	rustc --crate-type lib build/foo.rs --out-dir build && rustc --test test/integration/launcher.rs -L build -o build/it_tests
 	./build/it_tests
-
-.PHONY: clean lib all test
+	rustdoc --test src/ers/lib.rs -L lib
 
 LIBNAME := $(shell rustc --crate-file-name src/ers/lib.rs)
 
