@@ -14,6 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+/*!
+
+# ers is an ERb-style templating language for Rust.
+
+ers templates will be turned into statically compiled Rust functions at your
+will, allowing you to link them to your other projects.
+
+Copyright (C) 2014 Franck Verrot <franck@verrot.fr>
+
+Source code: https://github.com/franckverrot/ers
+*/
 #![crate_id = "github.com/franckverrot/ers"]
 #![desc = "ers - ERb-like templating for Rust"]
 #![license = "GPLv3"]
@@ -25,33 +36,66 @@ use std::iter::Peekable;
 use std::io::BufferedReader;
 use std::io::fs::File;
 
+/**
+`Class` is the base type of a `Block`.
+*/
 #[deriving(Eq)]
 pub enum Class {
+  /// Holds the function name that will represent the final template function
+  Declaration,
+
+  /// Defines the dependencies of the final function
   Header,
+
+  /// Represents Rust code to be executed
   Code,
+
+  /// Represents simple portions of text
   Text,
-  Print,
-  Declaration
+
+  /// Will output the result of the execution of the Rust code it holds
+  Print
 }
 
+/**
+Template
+*/
 pub struct Template {
+  /// Location of the template on the filesystem
   path:   ~str,
+
+  /// The collection of blocks that make the template
   blocks: ~[~Block]
 }
 
+/**
+Block
+*/
 #[deriving(Eq)]
 pub struct Block {
+  /// Block's "class" (header, declaration, etc.)
   class: Class,
+
+  /// Block's data
   content: ~str,
+
+  /// Block's position in the template
   pos: Pos
 }
 
+/**
+Pos
+*/
 #[deriving(Eq)]
 pub struct Pos {
+  /// Internal line number
   line_no: int
 }
 
 impl Pos {
+  /**
+    `write` will write the `Pos` content to the `writer`
+    */
   #[allow(unused_must_use)]
   pub fn write(&self, writer:&mut Writer) {
     writer.write_line(format!("\n//line {:d}", self.line_no));
@@ -60,12 +104,16 @@ impl Pos {
 
 /**
 TemplateWriteError
-**/
+*/
 pub enum TemplateWriteError {
+  /// Error raised by a missing declaration
   DeclarationNotFound
 }
 
 impl Template {
+  /**
+    `write_formatted` will write the `Template` content to the `writer`
+    */
   #[allow(unused_must_use)]
   pub fn write_formatted(&self, writer: &mut Writer) -> Result<int, TemplateWriteError> {
     let mut w = writer;
@@ -107,12 +155,18 @@ impl Template {
     Ok(blocks)
   }
 
+  /**
+    Creates a new template from a path and an array of blocks
+    */
   pub fn new(obj_path: ~str, obj_blocks: ~[~Block]) -> Template {
     return Template{path: obj_path,blocks: obj_blocks};
   }
 }
 
 impl Block {
+  /**
+    `write` will write the block's content to the `writer`
+    */
   #[allow(unused_must_use)]
   fn write(&self, writer:&mut Writer) {
     let mut w = writer;
@@ -143,15 +197,26 @@ impl Block {
   }
 }
 
+/**
+Parser
+*/
 pub struct Parser {
+  /// The version of the parser. This will prevent accidental regressions if
+  /// the grammar of Ers change in the future
   version: int
 }
 
 impl Parser {
+  /**
+    Creates a new Parser
+    */
   pub fn new() -> Parser {
     return Parser{version: 1}
   }
 
+  /**
+    `parse_path` is the parser main function that returns an `Option<Template>`
+    */
   pub fn parse_path(&self, path: ~str) -> Option<Template> {
     let mut blocks : ~[~Block] = ~[];
 
@@ -171,15 +236,27 @@ impl Parser {
   }
 }
 
-
+/**
+Scanner
+*/
 pub struct Scanner<Stream> {
+  /// Internal buffer used to parse the content of the buffer
   buffer:  Peekable<char, Stream>,
+
+  /// Location of the template to be parsed on the local filesystem
   path:    ~str,
+
+  /// Last block position parsed by the scanner
   pos:     Pos,
+
+  /// Last line parsed by the scanner
   priv current_line: int,
 }
 
 impl <Stream : Iterator<char>> Scanner<Stream> {
+  /**
+    `new` build a `Scanner` object from a `Stream` and a `path`
+   */
   pub fn new(input: Stream, path: ~str) -> Scanner<Stream> {
     Scanner {
       buffer: input.peekable(),
@@ -189,6 +266,10 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `read_char` is an utility method that consumes the next character
+    to be read
+   */
   pub fn read_char(&mut self) -> Option<char> {
     match self.buffer.next() {
       None => None,
@@ -199,6 +280,10 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `peek_char` is an utility method that inspects the next character
+    to be read
+   */
   pub fn peek_char(&mut self) -> Option<char> {
     match self.buffer.peek() {
       None    => None,
@@ -206,6 +291,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `scan` is the entry point of a `Scanner`
+   */
   pub fn scan(&mut self) -> Option<Block> {
     let c = self.read_char();
 
@@ -223,6 +311,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `scanBlock` is the entry point of the block parsing strategy
+   */
   pub fn scanBlock(&mut self) -> Option<Block> {
     let c = self.read_char();
 
@@ -243,6 +334,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `scanCodeBlock` will parse `Code` blocks
+   */
   pub fn scanCodeBlock(&mut self) -> Option<Block> {
     let c = self.read_char();
 
@@ -268,6 +362,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `scanDeclarationBlock` will parse `Declaration` blocks
+   */
   pub fn scanDeclarationBlock(&mut self) -> Option<Block> {
     let mut output = ~"";
     match self.scanContent(~"") {
@@ -277,6 +374,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     return Some(Block{class: Declaration, content: output, pos: Pos{line_no: self.current_line}});
   }
 
+  /**
+    `scanHeaderBlock` will parse `Header` blocks
+   */
   pub fn scanHeaderBlock(&mut self) -> Option<Block> {
     let mut output = ~"";
     match self.scanHeaderContent(~"") {
@@ -286,6 +386,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     return Some(Block{class: Header, content: output, pos: Pos{line_no: self.current_line}});
   }
 
+  /**
+    `scanPrintBlock` will parse `Print` blocks
+   */
   pub fn scanPrintBlock(&mut self) -> Option<Block> {
     let mut output = ~"";
     match self.scanContent(~"") {
@@ -295,6 +398,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     return Some(Block{class: Print, content: output, pos: Pos{line_no: self.current_line}});
   }
 
+  /**
+    `scanTextBlock` will parse `Text` blocks
+   */
   pub fn scanTextBlock(&mut self, s: ~str) -> Option<Block> {
     let mut output = s.clone();
     loop {
@@ -319,6 +425,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     return Some(Block{class: Text, content: output, pos: Pos{line_no: self.current_line}});
   }
 
+  /**
+    `scanContent` will parse any text section
+   */
   pub fn scanContent(&mut self, prefix: ~str) -> Option<~str> {
     let mut output = prefix.clone();
 
@@ -365,6 +474,9 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     }
   }
 
+  /**
+    `scanHeaderContent` will parse `Header` blocks
+   */
   pub fn scanHeaderContent(&mut self, prefix: ~str) -> Option<~str> {
     let mut output = prefix.clone();
 
