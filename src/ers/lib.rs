@@ -34,6 +34,7 @@ pub struct Pos {
 }
 
 impl Pos {
+  #[allow(unused_must_use)]
   pub fn write(&self, writer:&mut Writer) {
     writer.write_line(format!("\n//line {:d}", self.line_no));
   }
@@ -47,6 +48,7 @@ pub enum TemplateWriteError {
 }
 
 impl Template {
+  #[allow(unused_must_use)]
   pub fn write_formatted(&self, writer: &mut Writer) -> Result<int, TemplateWriteError> {
     let mut w = writer;
     let mut blocks = 0;
@@ -93,6 +95,7 @@ impl Template {
 }
 
 impl Block {
+  #[allow(unused_must_use)]
   fn write(&self, writer:&mut Writer) {
     let mut w = writer;
     self.pos.write(&mut w);
