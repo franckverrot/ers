@@ -17,7 +17,8 @@
 #![crate_id = "github.com/franckverrot/ers"]
 #![desc = "ers - ERb-like templating for Rust"]
 #![license = "GPLv3"]
-#![crate_type = "lib"]
+#![crate_type = "rlib"]
+#![crate_type = "dylib"]
 use std::str::from_char;
 use std::iter::Peekable;
 use std::io::BufferedReader;
