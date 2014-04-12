@@ -175,7 +175,7 @@ impl <Stream : Iterator<char>> Scanner<Stream> {
     match self.buffer.next() {
       None => None,
       Some(character) => {
-        if(character == '\n') { self.current_line += 1; }
+        if character == '\n' { self.current_line += 1; }
         Some(character)
       }
     }
