@@ -1,7 +1,7 @@
 extern crate ers;
 
 use ers::Parser;
-use ers::{Text,Header,Declaration,Code,Print,Pos,Block};
+use ers::blocks::{Text,Header,Declaration,Code,Print,Pos,Block};
 
 #[test]
 fn test_parser_parsepath() {

@@ -158,21 +158,21 @@ fn test_scanner_scan_multiline() {
   match s.scan() {
     None => assert!(false),
     Some(b) => {
-      assert!(b.class == ers::Text);
+      assert!(b.class == ers::blocks::Text);
       assert!(std::str::eq(&~"hello\\nworld", &b.content));
     }
   }
   match s.scan() {
     None => assert!(false),
     Some(b) => {
-      assert!(b.class == ers::Print);
+      assert!(b.class == ers::blocks::Print);
       assert!(std::str::eq(&~" x \n \n\n", &b.content));
     }
   }
   match s.scan() {
     None => assert!(false),
     Some(b) => {
-      assert!(b.class == ers::Text);
+      assert!(b.class == ers::blocks::Text);
       assert!(std::str::eq(&~"goodbye\n", &b.content));
     }
   }

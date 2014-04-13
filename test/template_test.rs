@@ -2,7 +2,8 @@ extern crate ers;
 
 use std::io::BufferedWriter;
 use std::io::fs::File;
-use ers::{Template,Text,Header,Declaration,Code,Print,Pos,Block};
+use ers::blocks::{Text,Header,Declaration,Code,Print,Block,Pos};
+use ers::Template;
 
 #[test]
 fn test_template_new() {
