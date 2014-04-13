@@ -36,81 +36,13 @@ use std::iter::Peekable;
 use std::io::BufferedReader;
 use std::io::fs::File;
 pub use blocks::{Block, Class, Pos};
+pub use template::Template;
+
+/// Template implementation
+pub mod template;
 
 /// Template blocks definitions and implementations
 pub mod blocks;
-
-/**
-Template
-*/
-pub struct Template {
-  /// Location of the template on the filesystem
-  path:   ~str,
-
-  /// The collection of blocks that make the template
-  blocks: ~[~Block]
-}
-
-/**
-TemplateWriteError
-*/
-pub enum TemplateWriteError {
-  /// Error raised by a missing declaration
-  DeclarationNotFound
-}
-
-impl Template {
-  /**
-    `write_formatted` will write the `Template` content to the `writer`
-    */
-  #[allow(unused_must_use)]
-  pub fn write_formatted(&self, writer: &mut Writer) -> Result<int, TemplateWriteError> {
-    let mut w = writer;
-    let mut blocks = 0;
-
-    // Write headers
-    let mut headers = self.blocks.iter().
-      filter(|&x|
-             match x.class {
-               blocks::Header => { return true },
-               _      => { return false }
-             }
-            );
-
-    // Write Declaration
-    let mut declarations = self.blocks.iter().
-      filter(|&x|
-             match x.class {
-               blocks::Declaration => { return true },
-               _           => { return false }
-             }
-            );
-
-    // Write Declaration
-    let mut allOtherBlocks = self.blocks.iter().
-      filter(|&x|
-             match x.class {
-               blocks::Header | blocks::Declaration => { return false },
-               _           => { return true }
-             }
-            );
-
-    for block in headers        { blocks+=1; block.write(&mut w); }
-    for block in declarations   { blocks+=1; block.write(&mut w); }
-    for block in allOtherBlocks { blocks+=1; block.write(&mut w); }
-
-    w.write_line("writer.flush();");
-    w.write_line("}\n");
-    Ok(blocks)
-  }
-
-  /**
-    Creates a new template from a path and an array of blocks
-    */
-  pub fn new(obj_path: ~str, obj_blocks: ~[~Block]) -> Template {
-    return Template{path: obj_path,blocks: obj_blocks};
-  }
-}
 
 /**
 Parser
