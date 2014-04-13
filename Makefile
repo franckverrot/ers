@@ -1,4 +1,4 @@
-.PHONY: clean lib all test
+.PHONY: clean lib all test doc
 
 test: clean lib ers
 	rustc --test test/template_test.rs -o build/template_test -L lib
@@ -9,9 +9,12 @@ test: clean lib ers
 	./build/scanner_test
 	rustc --crate-type lib build/foo.rs --out-dir build && rustc --test test/integration/launcher.rs -L build -o build/it_tests
 	./build/it_tests
-	rustdoc --test src/ers/lib.rs -L lib
 
-LIBNAME := $(shell rustc --crate-file-name src/ers/lib.rs)
+LIBNAME   := $(shell rustc --crate-file-name src/ers/lib.rs)
+
+doc:
+	rustdoc src/ers/lib.rs -L lib
+	rustdoc src/ers/blocks.rs -L lib
 
 all: lib test
 
@@ -30,4 +33,4 @@ license:
 	`open http://www.gnu.org/licenses/gpl.txt`
 
 ers:
-	rustc bin/ers.rs -L lib
+	rustc bin/ers.rs -L lib --out-dir bin/
