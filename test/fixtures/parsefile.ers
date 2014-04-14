@@ -2,7 +2,7 @@
 <%% use std::io; %%>
 <html>
 <% for n in range(0, i - 1) { %>
-<p>
+<p class="foobar<%= n %>">
   <%= n + 1 %>
 </p>
 <% } %>

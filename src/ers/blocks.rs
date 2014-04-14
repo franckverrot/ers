@@ -89,12 +89,12 @@ impl Block {
       },
       Text => {
         w.write_str(format!(
-            "writer.write_line(\"{:s}\");\n",
+            "writer.write_str(\"{:s}\");\n",
             content
             ));
       },
       Print => {
-        w.write_str("writer.write_line(format!(\"{:?}\", ");
+        w.write_str("writer.write_str(format!(\"{:?}\", ");
         w.write_str(format!("{:s}", content));
         w.write_str("));\n");
       },
