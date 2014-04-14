@@ -21,6 +21,7 @@ use blocks::Declaration;
 /**
 Template
 */
+#[deriving(Clone)]
 pub struct Template {
   /// Location of the template on the filesystem
   path:   ~str,

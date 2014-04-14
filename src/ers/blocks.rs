@@ -17,7 +17,7 @@
 /**
 `Class` is the base type of a `Block`.
 */
-#[deriving(Eq)]
+#[deriving(Eq,Clone)]
 pub enum Class {
   /// Holds the function name that will represent the final template function
   Declaration,
@@ -38,7 +38,7 @@ pub enum Class {
 /**
 Pos
 */
-#[deriving(Eq)]
+#[deriving(Eq, Clone)]
 pub struct Pos {
   /// Internal line number
   line_no: int
@@ -57,7 +57,7 @@ impl Pos {
 /**
 Block
 */
-#[deriving(Eq)]
+#[deriving(Eq,Clone)]
 pub struct Block {
   /// Block's "class" (header, declaration, etc.)
   class: Class,
@@ -77,27 +77,29 @@ impl Block {
   pub fn write(&self, writer:&mut Writer) {
     let mut w = writer;
     self.pos.write(&mut w);
+
+    let content = self.content.escape_default();
     match self.class {
       Header      => {
-        w.write_line(self.content);
+        w.write_line(content);
       },
       Declaration => {
-        w.write_str(self.content);
+        w.write_str(content);
         w.write_str(" {\n");
       },
       Text => {
         w.write_str(format!(
             "writer.write_line(\"{:s}\");\n",
-            self.content
+            content
             ));
       },
       Print => {
         w.write_str("writer.write_line(format!(\"{:?}\", ");
-        w.write_str(format!("{:s}", self.content));
+        w.write_str(format!("{:s}", content));
         w.write_str("));\n");
       },
       _ => {
-        w.write_line(self.content);
+        w.write_line(content);
       }
     }
   }

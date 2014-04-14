@@ -25,7 +25,7 @@ fn test_template_write() {
                   ~Block{class: Header,      content: ~"use std::io;", pos: Pos{line_no: 1}},
                   ~Block{class: Declaration, content: ~"pub fn Template(writer: &mut Writer, i : int)", pos: Pos{line_no: 2}},
                   ~Block{class: Code,        content: ~"for n in range(0, i - 1) {", pos: Pos{line_no: 3}},
-                  ~Block{class: Text,        content: ~"<p>",          pos: Pos{line_no: 5}},
+                  ~Block{class: Text,        content: ~"<p class=\"foobar\">",          pos: Pos{line_no: 5}},
                   ~Block{class: Print,       content: ~"n + 1",        pos: Pos{line_no: 6}},
                   ~Block{class: Text,        content: ~"</p>",         pos: Pos{line_no: 7}},
                   ~Block{class: Code,        content: ~"}",            pos: Pos{line_no: 8}},
