@@ -20,13 +20,13 @@ In order to compile a template `foo.ers` like:
 ```rust
 <%! pub fn Template(writer: &mut Writer, i: int) %>
 <%% use std::io; %%>
-<html>
-<% for n in range(0, i - 1) { %>
-<p>
-  <%= n + 1 %>
-</p>
-<% } %>
-</html>
+<body>
+  <% for n in range(0, i - 1) { %>
+    <p>
+      <%= n + 1 %>
+    </p>
+  <% } %>
+</body>
 ```
 
 into a pure Rust function, run:
@@ -48,17 +48,19 @@ fn main() {
 
 Compiling and running the `my-file` program will output:
 
-    <html>
-    <p>
+```html
+<body>
+  <p>
     1
-    </p>
-    <p>
+  </p>
+  <p>
     2
-    </p>
-    <p>
+  </p>
+  <p>
     3
-    </p>
-    </html>
+  </p>
+</body>
+```
 
 ## TEMPLATE DEFINITION
 
